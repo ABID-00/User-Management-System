@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Username</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- <style>
+        *{
+            background-color: burlywood;
+        }
+    </style> -->
+
+</head>
+<body>
+    <h2>You are about to Edit username of email: <%= user.email %></h2>
+    <form method="POST" action="/user/<%=user.id%>?_method=PATCH">
+        <input name="username" placeholder="<%= user.username %>" style="width:250px;">
+        <input type="password" name="password" placeholder="Enter password" style="width:250px;">
+        <button>Edit</button>
+    </form>
+    
+</body>
+</html>

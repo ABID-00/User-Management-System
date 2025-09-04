@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- <style>
+        *{
+            background-color: burlywood;
+        } -->
+    <!-- </style> -->
+
+</head>
+<style>
+    table,th,td{
+        border: 1px solid white;
+    } 
+</style>
+<body>
+    
+    <table>
+        <tr>
+            <!-- <th>Id</th> -->
+            <th>Email</th>
+            <th>Username</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+
+        <% for(user of users){ %>
+            <tr>
+                <!-- <td><%=user.id%></td> -->
+                <td><%=user.email%></td>
+                <td><%=user.username%></td>
+                <td>
+                    <form action="/user/<%=user.id%>/edit">
+                        <button class="btn btn-outline btn-sm">Edit Username</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/user/<%=user.id%>/delete">
+                        <button class="btn btn-outline btn-sm">Delete User</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+
+    </table>
+    <form action="/user/new" >
+        <button>Add New User?</button>
+    </form>
+    
+</body>
+</html>
+
+
